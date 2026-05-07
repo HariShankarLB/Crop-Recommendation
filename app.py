@@ -21,7 +21,7 @@ def weather_fetch(city):
 
     response = requests.get(url)
     x = response.json()
-    print(x)
+    print("weather data:", x)
 
     if response.status_code == 200 and "main" in x:
         y = x["main"]
@@ -59,7 +59,7 @@ def crop_recommend():
     return render_template('crop.html', title=title)
 
 
-model = load_model(r'.\LSTM.h5')
+model = load_model(r'.\MLP.h5')
 
 df = pd.read_csv(r".\Data\crop_data.csv")
 
