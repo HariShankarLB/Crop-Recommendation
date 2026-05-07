@@ -1,0 +1,108 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<!-- banner -->
+<section class="banner_w3lspvt" id="home">
+	<div class="csslider infinity" id="slider1">
+
+		<div class="banner-top">
+			<div class="overlay">
+				<div class="container">
+					<div class="w3layouts-banner-info text-center">
+						<h3 class="text-wh">GrowEver</h3>
+						<h4 class="text-wh mx-auto my-4"><b>Empowering farmers with data.<br>Free, fast, and tailored to your soil.</b></h4>
+						<br>
+						<h4 class="text-wh mx-auto my-4"><strong>Here are some questions we'll answer</strong></h4>
+						<p class="text-li mx-auto mt-2">
+							What crop to plant here? <br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+<!-- About Us Section -->
+<section class="core-value py-5 bg-light">
+    <div class="container py-md-4">
+        <h2 class="text-center mb-5">About Us</h2>
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+                <p class="lead bg-success text-white p-4 rounded">
+					At <strong>GrowEver</strong>, we combine cutting-edge machine learning with agricultural wisdom.
+					From crop selection to  recommendation, we enable farmers to increase yield and
+					sustainability by making informed, data-driven decisions.
+				</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-2">
+    <div class="container">
+        <h2 class="text-center mb-3">Our Services</h2>
+        <div class="row">
+            <!-- Crop Service -->
+            <div class="offset-md-3 col-md-6 mb-3">
+                <div class="card h-100 border-0 shadow-sm service-card hover-shadow transition">
+                    <img src="{{ url_for('static', filename='images/s3.jpg') }}" class="card-img-top" alt="Crop Recommendation">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Crop Recommendation</h5>
+                        <p class="card-text">Discover the most suitable crops for your region and soil with our AI-powered predictions.</p>
+                        <a href="{{ url_for('crop_recommend') }}" class="btn btn-outline-success mt-2">Try Crop Tool</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CSS Animations -->
+<style>
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+    }
+
+    .delay-1 {
+        animation-delay: 0.5s;
+    }
+
+    .delay-2 {
+        animation-delay: 1s;
+    }
+
+    .delay-3 {
+        animation-delay: 1.5s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        transition: 0.3s ease;
+    }
+
+    .hover-shadow:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .transition {
+        transition: all 0.3s ease-in-out;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- Inline CSS for quick custom styling -->
+<style>
+  body {
+    background: url('{{ url_for("static", filename="images/farm_background_1.jpg") }}') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 3rem auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: slideUp 1s ease;
+  }
+
+  .form-container h2 {
+    color: #1abc9c;
+  }
+
+  .form-control {
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus {
+    border-color: #1abc9c;
+    box-shadow: 0 0 0 0.2rem rgba(26, 188, 156, 0.25);
+  }
+
+  .btn-custom {
+    background-color: #1abc9c;
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-custom:hover {
+    background-color: #16a085;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<!-- Title -->
+<div class="container text-center mt-2">
+  <h2 class="text-white mb-4">🌾 <b>Find the Most Suitable Crop for Your Farm</b></h2>
+</div>
+
+<!-- Form Container -->
+<div class="form-container">
+  <form method="POST" action="{{ url_for('crop_prediction') }}">
+    <div class="form-group">
+      <label for="Nitrogen"><strong>Nitrogen</strong></label>
+      <input type="number" step="0.01" class="form-control" id="Nitrogen" name="nitrogen" min="0" max="140"  placeholder="e.g. 50" required />
+    </div>
+
+    <div class="form-group">
+      <label for="Phosphorous"><strong>Phosphorous</strong></label>
+      <input type="number" step="0.01" class="form-control" id="Phosphorous" name="phosphorous" min="5" max="145" placeholder="e.g. 50" required />
+    </div>
+
+    <div class="form-group">
+      <label for="Pottasium"><strong>Potassium</strong></label>
+      <input type="number" step="0.01" class="form-control" id="Pottasium" name="pottasium" min="5" max="200" placeholder="e.g. 50" required />
+    </div>
+
+    <div class="form-group">
+      <label for="ph"><strong>pH Level</strong></label>
+      <input type="number" step="0.01" class="form-control" id="ph" name="ph" min="3" max="10" placeholder="e.g. 6.5" required />
+    </div>
+
+    <div class="form-group">
+      <label for="Rainfall"><strong>Rainfall (in mm)</strong></label>
+      <input type="number" step="0.01" class="form-control" id="Rainfall" name="rainfall" min="20" max="300" placeholder="e.g. 100.5" required />
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="State"><strong>State</strong></label>
+      <select onchange="print_city('state', 23);" id="sts" name="stt" class="form-control" required></select>
+    </div>aa -->
+
+    <!-- <div class="form-group">
+      <label for="City"><strong>City</strong></label>
+      <select id="state" class="form-control" name="city" required></select>
+      <script language="javascript">print_state("sts");</script>
+    </div> -->
+    <div class="form-group">
+      <label for="City"><strong>City</strong></label>
+      <select id="state" class="form-control" name="city" required></select>
+      <script language="javascript">print_city('state', 23);</script>
+    </div>
+
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-custom">Predict</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

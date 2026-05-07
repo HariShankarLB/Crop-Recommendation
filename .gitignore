@@ -1,0 +1,9 @@
+.vscode/
+__pycache__/
+*.pyc
+
+note.txt
+config.py
+Untitled.ipynb
+
+**/.ipynb_checkpoints/
