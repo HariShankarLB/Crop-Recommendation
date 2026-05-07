@@ -12,7 +12,6 @@ import config
 from keras.models import load_model
 from keras.utils import to_categorical
 from datetime import datetime
-import mysql.connector
 
 
 def weather_fetch(city):
@@ -59,9 +58,9 @@ def crop_recommend():
     return render_template('crop.html', title=title)
 
 
-model = load_model(r'.\MLP.h5')
+model = load_model(r'MLP.h5')
 
-df = pd.read_csv(r".\Data\crop_data.csv")
+df = pd.read_csv(r"Data/crop_data.csv")
 
 features = df[['N', 'P','K','temperature', 'humidity', 'ph', 'rainfall']]
 
