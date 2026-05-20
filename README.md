@@ -143,10 +143,9 @@ Metrics used for evaluation:
 
 Add screenshots of your application here:
 
-```markdown
 ![Home Page](screenshots/home.png)
+![Input Page](screenshots/input.png)
 ![Prediction Result](screenshots/result.png)
-```
 
 ---
 
