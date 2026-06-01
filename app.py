@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import requests
-import config
 import os
 # import tensorflow as tf
 # print(tf.__version__)
