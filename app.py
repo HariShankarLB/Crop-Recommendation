@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import requests
 import config
+import os
 # import tensorflow as tf
 # print(tf.__version__)
 # from tensorflow.keras.models import load_model
@@ -114,4 +115,5 @@ def crop_prediction():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
