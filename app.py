@@ -8,10 +8,10 @@ import config
 import os
 # import tensorflow as tf
 # print(tf.__version__)
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.utils import to_categorical
-from keras.models import load_model
-from keras.utils import to_categorical
+from tensorflow.keras.models import load_model
+from tensorflow.keras.utils import to_categorical
+# from keras.models import load_model
+# from keras.utils import to_categorical
 from datetime import datetime
 
 
