@@ -6,6 +6,7 @@ A Machine Learning-based Crop Recommendation System that predicts the most suita
 
 🚀 Try the application here: https://crop-recommendation-kbje.onrender.com/
 
+
 ## 📌 Features
 
 - Predicts the best crop based on soil and weather conditions
