@@ -86,8 +86,9 @@ def crop_prediction():
         rainfall = float(request.form['rainfall'])
         city = request.form.get('city')
 
-        if weather_fetch(city) != None:
-            temperature, humidity = weather_fetch(city)
+        weather_data = weather_fetch(city)
+        if weather_data != None:
+            temperature, humidity = weather_data
             data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
 
 
