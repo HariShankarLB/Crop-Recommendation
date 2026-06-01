@@ -2,6 +2,10 @@
 
 A Machine Learning-based Crop Recommendation System that predicts the most suitable crop to grow based on soil nutrients and environmental conditions. This project helps farmers and agricultural planners make data-driven decisions for better productivity and sustainable farming.
 
+## 🌐 Live Demo
+
+🚀 Try the application here: https://crop-recommendation-kbje.onrender.com/
+
 ## 📌 Features
 
 - Predicts the best crop based on soil and weather conditions
